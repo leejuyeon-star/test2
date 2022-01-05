@@ -22,7 +22,7 @@ class Circle
     int radius;
     public:
     //중심좌표, 반지름길이 저장, 출력
-    int circle(x,y,r)
+    int take(int x, int y,int r)
     {
         radius=r;
         cout<<"radius: "<<radius<<endl;
@@ -35,14 +35,23 @@ class Circle
 class Ring
 {
     public:
-    int Init(X,Y,R,x,y,r)
+    void Init(int X,int Y,int R,int x,int y,int r)
     {
         cout<<"Inner Circle Info..."<<endl;
-        start(const Circle &circle){circle.take(X,Y,R);};
+        start(Circle &circle);
         cout<<"Outter Circle Info..."<<endl;
-        start(const Circle &Circle){circle.take(x,y,r);};
+        starts(Circle &circle);
     }
-    void ShowRingInfo(void);
+
+    void starts(Circle &circle)
+        {
+            circle.take(x,y,r);
+        }
+    
+    void start(Circle &circle)
+        {
+            circle.take(X,Y,R);
+        }
 };
 
 
@@ -50,8 +59,8 @@ class Ring
 int main()
 {
     Ring ring;
+
     ring.Init(1,1,4,2,2,9);
-    ring.ShowRingInfo();
     return 0;
 }
 
